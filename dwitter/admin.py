@@ -1,12 +1,8 @@
 from django.contrib import admin
 from django.contrib.auth.models import User, Group
+from .models import Profile,Dweet
 
 
-
-# dwitter/admin.py
-# ...
-from .models import Profile
-# ...
 admin.site.register(Profile)
 
 class ProfileInline(admin.StackedInline):
@@ -19,6 +15,7 @@ class UserAdmin(admin.ModelAdmin):
 admin.site.unregister(User)
 admin.site.register(User, UserAdmin)
 admin.site.unregister(Group)
+admin.site.register(Dweet)
 
 
 
